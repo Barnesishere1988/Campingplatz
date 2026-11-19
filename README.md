@@ -219,3 +219,14 @@ Wichtige Prüffälle:
 Bewertungsspielraum: Die technische Umsetzung, Datenhaltung, Seitenaufteilung und Projektstruktur werden bewusst nicht vorgegeben. Die Prüflinge müssen diese Entscheidungen selbst treffen.
 
 Zeitliche Einschätzung: Die Pflichtanforderungen sind für sechs Stunden konzipiert. Der Schwerpunkt liegt auf der Verwaltung zusammengehöriger Informationen und der korrekten Prüfung von Reservierungszeiträumen. Die Zusatzaufgaben sind nicht Bestandteil des verpflichtenden Umfangs.
+
+## Anwendung starten
+
+1. In XAMPP Apache und MySQL starten.
+2. In phpMyAdmin unter „Importieren“ die Datei `database.sql` auswählen. Sie legt die Datenbank `camping` und die beiden Tabellen an.
+3. Bei abweichenden MySQL-Zugangsdaten die Konstanten in `Model/DB.php` anpassen. Standardmäßig wird der lokale XAMPP-Zugang `root` mit leerem Passwort verwendet.
+4. `http://localhost/LAPUebung/public/` öffnen.
+
+Die Anwendung benötigt PHP mit `pdo_mysql` und `mbstring`. Die Einstiegsseiten liegen in `public/`, die Seitenlogik in `Controller/`, die Eingabeprüfung in `Requests/`, der Datenbankzugriff in `Model/` und die HTML-Ansichten in `src/views/`.
+
+Der Preis pro Nacht wird bei der Buchung gespeichert. Bei einem Stellplatzwechsel gilt der Preis des neuen Stellplatzes. Entfernte Stellplätze bleiben mit früheren und stornierten Reservierungen verknüpft.
